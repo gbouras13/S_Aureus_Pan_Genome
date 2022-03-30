@@ -29,6 +29,6 @@ conda activate snakemake_clean_env
 
 #snakemake -c 1 -s runner.smk --use-conda --config Assemblies=/hpcfs/users/a1667917/s_aureus/total_fastas  Output=/hpcfs/users/a1667917/s_aureus/Insertion_Seqs_Out  --conda-create-envs-only --conda-frontend conda
 
-snakemake -c 1 -s runner.smk --use-conda --config Assemblies=/hpcfs/users/a1667917/s_aureus/total_fastas  Output=/hpcfs/users/a1667917/s_aureus/MLST_ncbi  
+snakemake -c 1 -s runner.smk --use-conda --config Assemblies=/hpcfs/users/a1667917/s_aureus/ncbi  Output=/hpcfs/users/a1667917/s_aureus/MLST_ncbi  
 
 conda deactivate
