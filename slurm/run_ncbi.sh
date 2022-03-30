@@ -16,7 +16,7 @@
 #SBATCH --mem=4GB                                              # specify memory required per node
 
 
-SNK_DIR="/hpcfs/users/a1667917/s_aureus/S_Aureus_Pipeline"
+SNK_DIR="/hpcfs/users/a1667917/s_aureus/S_Aureus_Pan_Genome"
 PROF_DIR="/hpcfs/users/a1667917/snakemake_slurm_profile"
 
 cd $SNK_DIR
@@ -27,6 +27,8 @@ conda activate snakemake_clean_env
 # snakemake -c 1 -s runner.smk --use-conda --config Assemblies=/hpcfs/users/a1667917/s_aureus/total_fastas  Output=/hpcfs/users/a1667917/s_aureus/Insertion_Seqs_Out  --conda-create-envs-only --conda-frontend conda
 #snakemake -c 1 -s runner.smk --use-conda --config Assemblies=/hpcfs/users/a1667917/s_aureus/total_fastas  Output=/hpcfs/users/a1667917/s_aureus/Insertion_Seqs_Out --profile $PROF_DIR/s_aureus
 
-python3 run_pipeline.py -c 1 -f /hpcfs/users/a1667917/s_aureus/ncbi/ -o /hpcfs/users/a1667917/s_aureus/Insertion_NCBI_Out -p $PROF_DIR/s_aureus
+#snakemake -c 1 -s runner.smk --use-conda --config Assemblies=/hpcfs/users/a1667917/s_aureus/total_fastas  Output=/hpcfs/users/a1667917/s_aureus/Insertion_Seqs_Out  --conda-create-envs-only --conda-frontend conda
+
+snakemake -c 1 -s runner.smk --use-conda --config Assemblies=/hpcfs/users/a1667917/s_aureus/total_fastas  Output=/hpcfs/users/a1667917/s_aureus/MLST  
 
 conda deactivate
